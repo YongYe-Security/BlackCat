@@ -63,15 +63,14 @@ The difference between BlackCat-AgentCs_v1.2.exe and BlackCat-Agent_v1.2.exe lie
 <br>
 <br>
 
-**Known bug, but currently unable to fix.**
+**已知错误，但目前无法修复。**
 
-After running the program, all command-line parameters will be passed to the executed tool. The usage of Mimikatz is not affected, and it is also possible to run the Cobalt Strike client.
+运行程序后，所有命令行参数都将传递给执行的工具。 Mimikatz的使用不受影响，并且还可以运行Cobalt Strike客户端。
 
-The initial design intention of the tool was to modularly bypass antivirus (AV) software, but due to these limitations, its usage is restricted. In the future, there are plans to refactor the code and switch to DLL loading and injection methods. However, it still remains a useful tool for Cobalt Strike scenarios.
-
+该工具的最初设计意图是模块化绕过防病毒（AV）软件，但由于这些限制，其使用受到限制。 未来有计划重构代码，改用DLL加载和注入方式。 然而，它仍然是 Cobalt Strike 场景中的一个有用工具。
 ![Snipaste_23_15-12-21-4-38-571](https://github.com/YongYe-Security/BlackCat/assets/90460865/b87873cb-d799-4be9-80f6-100e8a5ee99e)
 
 
 
 
-To obtain the password for extracting the compressed file, please join our official account's group chat.  YongYe_Security
+解压密码在公众号群聊。 YongYe_Security
