@@ -2,15 +2,14 @@
 ![logo](https://github.com/YongYe-Security/BlackCat/assets/90460865/9af9e436-d26a-4efc-8200-d40f0d895a1b)
 <br>
 <br>
-**Do not use this tool for any unauthorized or illegal network attacks. I take no responsibility for any misuse or illegal activities conducted with this tool.**
+**请勿使用此工具进行任何未经授权或非法的网络攻击，我对使用此工具进行的任何误用或非法活动不承担任何责任。**
 <br>
 <br>
-A tool created for recreational purposes. It has been tested and proven to bypass antivirus software such as McAfee, Avira, 360safe, and others. In addition to static evasion techniques, it also supports dynamic evasion. The core functionality of the tool relies on shellcode injection technology.
-It is recommended to refactor the open-source tool to remove certain fingerprints and increase the probability of bypassing antivirus (AV) software. Of course, this tool will be further modified to evade AV detection once again.
-The code might not be aesthetically pleasing, and there are currently no plans for open-sourcing or updating it. However, I assure you that there are no backdoors in the code.  
+为娱乐目的而创建的工具。 它已经过测试并证明可以绕过 McAfee、Avira、360safe 等防病毒软件。 除了静态躲避技术外，还支持动态躲避。 该工具的核心功能依赖于 shellcode 注入技术。
+建议重构开源工具以删除某些指纹并增加绕过防病毒（AV）软件的概率。 当然，这个工具还会被进一步修改，以再次逃避AV检测。
+代码可能不太美观，目前还没有开源或更新的计划。 但是，我向您保证代码中没有后门。
 <br>
-<br>
-**Help**
+**帮助**
 
 ```
 options:
@@ -21,14 +20,13 @@ options:
 <br>
 <br>
 
-**Steps for usage**
+**使用步骤**
 
-1.Generate payload using Admin side,Take mimikatz as an example below.
+1.使用Admin端生成payload，下面以mimikatz为例。
 
-Note:exeNmae is the software name of the executable file to be used, no suffix is required. Only effective for exe format files.
+注：exeNmae是要使用的可执行文件的软件名称，不需要后缀。 仅对exe格式文件有效。
 
-After execution, two files will be generated: one is the shellcode file (mimikatz.txt) and the other is the attack payload (mimikatz_Payload.txt).
-
+执行后会生成两个文件：一个是shellcode文件（mimikatz.txt），另一个是攻击负载（mimikatz_Payload.txt）。
 ```
 BlackCat-Admin_v1.2.exe -f exeName
 Example:BlackCat-Admin_v1.2.exe -f mimikatz
@@ -37,19 +35,18 @@ Example:BlackCat-Admin_v1.2.exe -f mimikatz
 ![Snipaste_23_14-12-38-4-27-174](https://github.com/YongYe-Security/BlackCat/assets/90460865/f59fc9e4-1086-4333-8267-07376af7c26c)
 
 
-2.Rename Payload
+2.重命名有效负载
 
 ```
 ren exeName_Payload.txt Payload.txt
 Example:ren mimikatz_Payload.txt Payload.txt
 ```
 
-3.Upload the loader to the target server to load the tool and execute the command.
+3.上传加载器到目标服务器，加载工具并执行命令。
 
-You need to upload three files, BlackCat-Agent.exe, exeName.txt, and payload.txt, to the target server.
+您需要将BlackCat-Agent.exe、exeName.txt和payload.txt这三个文件上传到目标服务器。
 
-Remote loading is currently not available. Only local loading solutions are provided.
-
+目前不支持远程加载。 仅提供本地加载解决方案。
 ```
 BlackCat-Agent_v1.2.exe exeName.txt  cmd
 Example:BlackCat-Agent_v1.2.exe mimikatz.txt "privilege::debug" "sekurlsa::logonpasswords" exit
@@ -57,9 +54,7 @@ Example:BlackCat-Agent_v1.2.exe mimikatz.txt "privilege::debug" "sekurlsa::logon
 
 ![23-13-45-31-51](https://github.com/YongYe-Security/BlackCat/assets/90460865/ecd81dce-226e-4214-bacc-53650b6ef500)
 
-
-The difference between BlackCat-AgentCs_v1.2.exe and BlackCat-Agent_v1.2.exe lies in their user interface. BlackCat-AgentCs does not display a terminal or graphical interface, making it suitable for scenarios like Cobalt Strike where stealthiness is required. On the other hand, BlackCat-Agent allows you to view the feedback of command execution in the terminal interface.
-
+BlackCat-AgentCs_v1.2.exe 和 BlackCat-Agent_v1.2.exe 之间的区别在于其用户界面。 BlackCat-AgentCs 不显示终端或图形界面，因此适合像 Cobalt Strike 这样需要隐秘性的场景。 另一方面，BlackCat-Agent允许您在终端界面查看命令执行的反馈。
 <br>
 <br>
 
