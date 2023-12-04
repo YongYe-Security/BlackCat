@@ -1,15 +1,18 @@
 <br><br>
-![logo](https://github.com/YongYe-Security/BlackCat/assets/90460865/9af9e436-d26a-4efc-8200-d40f0d895a1b)
+
 <br>
 <br>
 **请勿使用此工具进行任何未经授权或非法的网络攻击，我对使用此工具进行的任何误用或非法活动不承担任何责任。**
 <br>
 <br>
-为娱乐目的而创建的工具。 它已经过测试并证明可以绕过 McAfee、Avira、360safe 等防病毒软件。 除了静态躲避技术外，还支持动态躲避。 该工具的核心功能依赖于 shellcode 注入技术。
-建议重构开源工具以删除某些指纹并增加绕过防病毒（AV）软件的概率。 当然，这个工具还会被进一步修改，以再次逃避AV检测。
-代码可能不太美观，目前还没有开源或更新的计划。 但是，我向您保证代码中没有后门。
+1、随便写着玩的工具。 已经过测试并证明可以绕过 McAfee、Avira、360safe 等防病毒软件。 除了规避静态查杀，还能绕过部分动态查杀。 该工具的核心功能依赖于 shellcode 注入技术。
+2、该工具的最初设计意图是模块化的绕过防病毒（AV）软件，去处每个工具都需要免杀的麻烦操作。这个工具只需要将每个exe工具生成一次然后保存生成的两个载荷，后续不需要再次生成也可以使用。
+3、建议对需要加载的工具重构以删除某些指纹并增加绕过防病毒（AV）软件的概率，当然这个工具还会被进一步修改以再次逃避AV检测。
+4、由于最后所提到的问题，其使用宽度受到一些限制，具体可以自已发掘。
+5、代码比较难看，目前还没有开源或更新的计划。 但是保证代码中绝对没有后门。未来有计划重构代码，改用DLL加载、注入的方式解决第四点的问题。 现在这个工具仍然是 Cobalt Strike 等场景中的一个有用工具。
 <br>
-**帮助**
+<br>
+**帮助信息**
 
 ```
 options:
@@ -32,7 +35,7 @@ BlackCat-Admin_v1.2.exe -f exeName
 Example:BlackCat-Admin_v1.2.exe -f mimikatz
 ```
 
-![Snipaste_23_14-12-38-4-27-174](https://github.com/YongYe-Security/BlackCat/assets/90460865/f59fc9e4-1086-4333-8267-07376af7c26c)
+
 
 
 2.重命名有效负载
@@ -44,25 +47,25 @@ Example:ren mimikatz_Payload.txt Payload.txt
 
 3.上传加载器到目标服务器，加载工具并执行命令。
 
-您需要将BlackCat-Agent.exe、exeName.txt和payload.txt这三个文件上传到目标服务器。
+将BlackCat-Agent.exe、exeName.txt和payload.txt这三个文件上传到目标服务器。
 
-目前不支持远程加载。 仅提供本地加载解决方案。
+目前不开放远程加载方案，仅提供本地加载解决方案。
 ```
 BlackCat-Agent_v1.2.exe exeName.txt  cmd
 Example:BlackCat-Agent_v1.2.exe mimikatz.txt "privilege::debug" "sekurlsa::logonpasswords" exit
 ```
 
-![23-13-45-31-51](https://github.com/YongYe-Security/BlackCat/assets/90460865/ecd81dce-226e-4214-bacc-53650b6ef500)
 
-BlackCat-AgentCs_v1.2.exe 和 BlackCat-Agent_v1.2.exe 之间的区别在于其用户界面。 BlackCat-AgentCs 不显示终端或图形界面，因此适合像 Cobalt Strike 这样需要隐秘性的场景。 另一方面，BlackCat-Agent允许您在终端界面查看命令执行的反馈。
+
+BlackCat-AgentCs_v1.2.exe 和 BlackCat-Agent_v1.2.exe 之间的区别在于其用户界面。 BlackCat-AgentCs 不显示终端或图形界面，因此适合像 Cobalt Strike 这样需要隐秘性的场景。 BlackCat-Agent可以在终端界面查看命令执行的反馈。
 <br>
 <br>
 
-**已知错误，但目前无法修复。**
+**已知错误，但目前未修复。**
 
-运行程序后，所有命令行参数都将传递给执行的工具。 Mimikatz的使用不受影响，并且还可以运行Cobalt Strike客户端。
+运行程序后，所有命令行参数都将传递给执行的工具。 Mimikatz、Cobalt Strike的使用不受影响。
 
-该工具的最初设计意图是模块化绕过防病毒（AV）软件，但由于这些限制，其使用受到限制。 未来有计划重构代码，改用DLL加载和注入方式。 然而，它仍然是 Cobalt Strike 场景中的一个有用工具。
+
 ![Snipaste_23_15-12-21-4-38-571](https://github.com/YongYe-Security/BlackCat/assets/90460865/b87873cb-d799-4be9-80f6-100e8a5ee99e)
 
 
