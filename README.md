@@ -1,3 +1,6 @@
+lost effectiveness<br>
+lost effectiveness<br>
+
 <br><br>
 ![logo](https://github.com/YongYe-Security/BlackCat/assets/90460865/9af9e436-d26a-4efc-8200-d40f0d895a1b)
 <br>
